@@ -9,6 +9,7 @@ import startOfToday from 'date-fns/startOfToday'
 import startOfMonth from 'date-fns/startOfMonth'
 import addMonths from 'date-fns/addMonths'
 import format from 'date-fns/format'
+import {fr} from 'date-fns/locale'
 import addDays from 'date-fns/addDays'
 
 export function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null) {
@@ -141,7 +142,7 @@ export function getInputValue(
   defaultValue: string,
 ) {
   if (date && typeof displayFormat === 'string') {
-    return format(date, displayFormat)
+    return format(date, displayFormat, {locale: fr})
   } else if (date && typeof displayFormat === 'function') {
     return displayFormat(date)
   } else {

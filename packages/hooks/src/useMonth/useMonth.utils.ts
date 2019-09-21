@@ -6,6 +6,7 @@ import format from 'date-fns/format'
 import getDay from 'date-fns/getDay'
 import startOfMonth from 'date-fns/startOfMonth'
 import startOfWeek from 'date-fns/startOfWeek'
+import {fr} from 'date-fns/locale'
 
 type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface GetWeekdayLabelsProps {
@@ -15,7 +16,7 @@ export interface GetWeekdayLabelsProps {
 
 export function getWeekdayLabels({
   firstDayOfWeek = 1,
-  weekdayLabelFormat = (date: Date) => format(date, 'iiiiii'),
+  weekdayLabelFormat = (date: Date) => format(date, 'iiiiii', {locale: fr}),
 }: GetWeekdayLabelsProps = {}) {
   const now = new Date()
   const arr = eachDay({

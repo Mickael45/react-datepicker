@@ -1,10 +1,11 @@
 import {useMemo} from 'react'
 import format from 'date-fns/format'
+import {fr} from 'date-fns/locale'
 import {getDays, GetDaysProps, getWeekdayLabels, GetWeekdayLabelsProps} from './useMonth.utils'
 
-export const dayLabelFormatFn = (date: Date) => format(date, 'dd')
-export const weekdayLabelFormatFn = (date: Date) => format(date, 'eeeeee')
-export const monthLabelFormatFn = (date: Date) => format(date, 'MMMM yyyy')
+export const dayLabelFormatFn = (date: Date) => format(date, 'dd', {locale: fr})
+export const weekdayLabelFormatFn = (date: Date) => format(date, 'eeeeee', {locale: fr})
+export const monthLabelFormatFn = (date: Date) => format(date, 'MMMM yyyy', {locale: fr})
 
 export interface UseMonthResult {
   weekdayLabels: string[]
